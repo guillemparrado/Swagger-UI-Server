@@ -1,0 +1,120 @@
+openapi: 3.0.0
+info:
+  title: Driver API
+  version: 1.0.0
+paths:
+  /drivers:
+    get:
+      summary: Retrieve all drivers
+      operationId: getAllDrivers
+      responses:
+        "200":
+          description: A list of drivers
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Driver"
+    post:
+      summary: Create a new driver
+      operationId: createDriver
+      requestBody:
+        description: The driver to create
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/DriverInput"
+      responses:
+        "201":
+          description: The created driver
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Driver"
+  /drivers/{id}:
+    get:
+      summary: Retrieve a driver by ID
+      operationId: getDriverById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: The ID of the driver to retrieve
+          schema:
+            type: string
+      responses:
+        "200":
+          description: The requested driver
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Driver"
+    put:
+      summary: Update a driver by ID
+      operationId: updateDriverById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: The ID of the driver to update
+          schema:
+            type: string
+      requestBody:
+        description: The driver data to update
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/DriverInput"
+      responses:
+        "200":
+          description: The updated driver
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Driver"
+    delete:
+      summary: Delete a driver by ID
+      operationId: deleteDriverById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: The ID of the driver to delete
+          schema:
+            type: string
+      responses:
+        "204":
+          description: No content
+components:
+  schemas:
+    Driver:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The ID of the driver
+        name:
+          type: string
+          description: The name of the driver
+        license_id:
+          type: string
+          description: The ID of the driver's license
+      required:
+        - id
+        - name
+        - license_id
+    DriverInput:
+      type: object
+      properties:
+        name:
+          type: string
+          description: The name of the driver
+        license_id:
+          type: string
+          description: The ID of the driver's license
+      required:
+        - name
+        - license_id
