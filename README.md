@@ -4,7 +4,7 @@ Swagger-UI server to render OpenApi files.
 
 ## Installation
 
-Clone the repository, cd into the folder and intall dependencies ( `npm i` ).
+Clone the repository, cd into the folder and install dependencies ( `npm i` ).
 
 Ideally, alias the execution command in your terminal environment. For example, if you use bash or zsh, add the following line to your ~/.bashrc or ~/.zshrc file:
 
