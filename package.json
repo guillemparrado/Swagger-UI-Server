@@ -1,6 +1,28 @@
 {
+  "name": "swagger-ui-server",
+  "description": "Swagger-UI server to render OpenApi files.",
+  "version": "1.0.0",
+  "main": "app.js",
   "dependencies": {
     "swagger-ui-express": "^4.6.3",
     "yamljs": "^0.3.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guillemparrado/Swagger-UI-Server.git"
+  },
+  "keywords": [
+    "Swagger",
+    "UI",
+    "SwaggerUI",
+    "Express",
+    "Server",
+    "OpenAPI"
+  ],
+  "author": "Guillem Parrado",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/guillemparrado/Swagger-UI-Server/issues"
+  },
+  "homepage": "https://github.com/guillemparrado/Swagger-UI-Server#readme"
 }
